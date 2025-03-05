@@ -31,3 +31,30 @@ function checkSquareElement(arr1, arr2) {
 }
 
 console.log(checkSquareElement([1, 2, 3, 4], [4, 1, 16, 9]))
+
+
+/**
+ * Check Square Elements of Another Array
+ * 
+ * input: [1, 2, 4, 2], [1, 4, 4, 16]
+ * output: true
+ * 
+ * Method : Optimized and timecomplexity O(n)
+ */
+
+function checkSquareElementOptimized(arr1, arr2) {
+	const arrayMap = {}
+	for (let val of arr1) {
+		arrayMap[val * val] = (arrayMap[val * val] || 0) + 1
+	}
+
+	for (let val of arr2) {
+		if (!val in arrayMap || !arrayMap[val]) {
+			return false
+		}
+		arrayMap[val]--
+	}
+	return true
+}
+
+console.log(checkSquareElementOptimized([1, 2, 4, 2], [1, 4, 4, 16]))
