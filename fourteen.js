@@ -111,11 +111,12 @@ function sumInObject(obj) {
 	for (let key in obj) {
 		if (typeof obj[key] === 'number') {
 			sum += obj[key]
-			return sum
 		} else if (typeof obj[key] === 'object') {
 			sum += sumInObject(obj[key])
 		}
 	}
+
+  return sum
 }
 
 const nestedObject = {
@@ -225,13 +226,12 @@ const nestedObject2 = {
 
 function findSpecificKey(obj, inputKey) {
 	for (let key in obj) {
+    if (inputKey === key) {
+      return obj[key]
+    }
 		if (typeof obj[key] === 'object') {
 			const result = findSpecificKey(obj[key], inputKey)
 			if (result) return result
-		} else {
-			if (inputKey === key) {
-				return obj[key]
-			}
 		}
 	}
 

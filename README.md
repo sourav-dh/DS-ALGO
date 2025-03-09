@@ -46,3 +46,9 @@ File name : thirteen.js
 	- Collect All Keys in a Deeply Nested Object
 File name : fourteen.js
 
+## 15. Flatten Array of Array
+File name : fifteen.js
+
+## 16. reverse a sentense
+File name : sixteen.js
+
